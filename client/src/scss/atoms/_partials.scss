@@ -10,3 +10,7 @@
   border-radius: $space;
   @include sombras;
 }
+
+.noShow {
+  display: none;
+}

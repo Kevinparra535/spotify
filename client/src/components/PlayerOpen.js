@@ -2,6 +2,8 @@ import React from "react";
 
 import { Link } from "react-router-dom";
 
+import Nav from "../components/Nav";
+
 import ImgDefault from "../images/icons/player__default.png";
 import IconPrev from "../images/icons/previous.png";
 import IconNext from "../images/icons/next.png";
@@ -14,30 +16,31 @@ class PlayerOpen extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <section class="musicPlayer">
-          <div class="container">
-            <div class="container__header">
-              <h2 class="artists__name">Artist</h2>
+        <Nav />
+        <section className="musicPlayer">
+          <div className="container">
+            <div className="container__header">
+              <h2 className="artists__name">Artist</h2>
               <Link to="/" id="button__down">
                 <img src={IconDown} alt="" />
               </Link>
             </div>
 
-            <div class="container__body">
-              <div class="container__body--covers">
-                <img class="cover" src={ImgDefault} alt="" />
+            <div className="container__body">
+              <div className="container__body--covers">
+                <img className="cover" src={ImgDefault} alt="" />
               </div>
-              <h2 class="song__name">Song Name</h2>
-              <p class="album__name">Album Name</p>
+              <h2 className="song__name">Song Name</h2>
+              <p className="album__name">Album Name</p>
             </div>
 
-            <div class="container__footer">
-              <div class="controls">
-                <div class="controls__time">
+            <div className="container__footer">
+              <div className="controls">
+                <div className="controls__time">
                   <p>00:00</p>
 
                   <div
-                    class="length range__slider"
+                    className="length range__slider"
                     // data-min="00:00"
                     // data-max="00:00"
                   >
@@ -50,15 +53,15 @@ class PlayerOpen extends React.Component {
                     ></lottie-player>
                   </div>
 
-                  <p class="timeMax">00:00</p>
+                  <p className="timeMax">00:00</p>
                 </div>
 
-                <div class="controls__volume">
+                <div className="controls__volume">
                   <p>
                     <img src={IconVMin} alt="" />
                   </p>
 
-                  {/* <div class="length range__slider">
+                  {/* <div className="length range__slider">
                     <input
                       id="slider__volume"
                       type="range"
@@ -73,14 +76,18 @@ class PlayerOpen extends React.Component {
                   </p>
                 </div>
 
-                <div class="controls__music">
-                  <button class="controls__music--side prev">
+                <div className="controls__music">
+                  <button className="controls__music--side prev">
                     <img src={IconPrev} alt="Icon/Previous" />
                   </button>
-                  <button class="controls__music--center">
-                    <img class="play" src={IconPlay} alt="Icon Play/pause" />
+                  <button className="controls__music--center">
+                    <img
+                      className="play"
+                      src={IconPlay}
+                      alt="Icon Play/pause"
+                    />
                   </button>
-                  <button class="controls__music--side next">
+                  <button className="controls__music--side next">
                     <img src={IconNext} alt="Icon Next" />
                   </button>
                 </div>

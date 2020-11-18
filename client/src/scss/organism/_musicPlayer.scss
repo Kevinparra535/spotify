@@ -13,7 +13,7 @@
   color: $color-primario;
   background-color: $color-bg-claro;
   @include media(desktop-s) {
-    display: none;
+    // display: none;
   }
 }
 
