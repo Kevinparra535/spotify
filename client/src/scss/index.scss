@@ -1,0 +1,15 @@
+@import "./Vendors/bootstrap_reboot";
+@import "./Vendors/grids.scss";
+@import "./Vendors/breakpoints.scss";
+@import "./organism/globales";
+
+@import "./fundations/fonts";
+@import "./components/header";
+@import "./components/player";
+@import "./components/controls";
+@import "./components/search";
+@import "./organism/main";
+@import "./organism/musicPlayer";
+@import "./atoms/cards";
+@import "./atoms/slider";
+@import "./atoms/partials";
