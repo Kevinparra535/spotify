@@ -58,7 +58,7 @@ class Home extends React.Component {
 
   componentWillUnmount() {
     // clear the interval to save resources
-    clearInterval(this.interval);
+    // clearInterval(this.interval);
   }
 
   tick() {
@@ -94,7 +94,6 @@ class Home extends React.Component {
       },
     });
   }
-
   render() {
     return (
       <React.Fragment>
@@ -113,7 +112,7 @@ class Home extends React.Component {
           </div>
         )}
 
-        <Nav />
+        <Nav token={this.state.token} />
 
         <main className="main">
           <img className="main__banner" src={Main} alt="Main Banner" />
