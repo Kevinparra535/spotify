@@ -8,7 +8,7 @@ In the project directory, you can run:
 
 ### `Primeros pasos` 😅
 
-Una vez haya clonado o descargado el proyecto en la linea de comandos ubiquese dentro de la carpeta cliente, una vez alli escriba `npm install, esto descargara` todas las
+Una vez haya clonado o descargado el proyecto en la linea de comandos ubiquese dentro de la carpeta cliente, una vez alli escriba npm install, esto descargara todas las
 dependencias necesarias para que el proyecto funcione.
 
 
