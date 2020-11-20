@@ -18,6 +18,8 @@ Una vez alla terminado de instalar escriba `npm run start` o  `yarn start`
 Si por algun motivo no funciona con los datos que estan ahí, entre a este [sitio](https://developer.spotify.com/dashboard/applications/)
 Y registre una nueva aplicacion si no sabe como siga esta guia 
 
+Cree una aplicacion
+![Cree una aplicacion](https://prnt.sc/vn4pdo)
 
 ## Como funciona la API de Spotify
 
