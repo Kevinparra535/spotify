@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 
-
 const Loader = (props) => {
   const [node] = useState(document.createElement("div"));
   const loader = document.querySelector("#loader");
@@ -22,4 +21,5 @@ const Loader = (props) => {
 
   return ReactDOM.createPortal(props.children, node);
 };
+
 export default Loader;

@@ -1,16 +1,8 @@
 import React from "react";
-import * as $ from "jquery";
-
-import {
-  authEndpoint,
-  clientId,
-  redirectUri,
-  scopes,
-} from "../components/Config";
-import hash from "../components/Hash";
+import { connect } from "react-redux";
+import { Redirect } from "react-router-dom";
 
 import PlayerMin from "../components/PlayerMin";
-import PlayerOpen from "../components/PlayerOpen";
 import Nav from "../components/Nav";
 
 import Weekend from "../images/cards__theWeekend.jpg";
@@ -19,147 +11,69 @@ import Travis from "../images/cards__travis.jpg";
 import Rihana from "../images/cards__riana.jpg";
 import Main from "../images/cards__main.png";
 
-class Home extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      token: null,
-      item: {
-        album: {
-          images: [{ url: "" }],
-        },
-        name: "",
-        artists: [{ name: "" }],
-        duration_ms: 0,
-      },
-      is_playing: "Paused",
-      progress_ms: 0,
-      no_data: false,
-    };
+const Home = (props) => {
+  const {
+    REACT_APP_CLIENT_ID,
+    REACT_APP_AUTHORIZE_URL,
+    REACT_APP_REDIRECT_URL,
+  } = process.env;
 
-    this.getCurrentlyPlaying = this.getCurrentlyPlaying.bind(this);
-    this.tick = this.tick.bind(this);
-  }
-  componentDidMount() {
-    // Set token
-    let _token = hash.access_token;
+  const handleLogin = () => {
+    window.location = `${REACT_APP_AUTHORIZE_URL}?client_id=${REACT_APP_CLIENT_ID}&redirect_uri=${REACT_APP_REDIRECT_URL}&response_type=token&show_dialog=true`;
+  };
 
-    if (_token) {
-      // Set token
-      this.setState({
-        token: _token,
-      });
-      this.getCurrentlyPlaying(_token);
-    }
-
-    // set interval for polling every 5 seconds
-    this.interval = setInterval(() => this.tick(), 5000);
-  }
-
-  componentWillUnmount() {
-    // clear the interval to save resources
-    // clearInterval(this.interval);
-  }
-
-  tick() {
-    if (this.state.token) {
-      this.getCurrentlyPlaying(this.state.token);
-    }
-  }
-
-  getCurrentlyPlaying(token) {
-    // Make a call using the token
-    $.ajax({
-      url: "https://api.spotify.com/v1/me/player",
-      type: "GET",
-      beforeSend: (xhr) => {
-        xhr.setRequestHeader("Authorization", "Bearer " + token);
-      },
-      success: (data) => {
-        // Checks if the data is not empty
-        if (!data) {
-          this.setState({
-            no_data: true,
-          });
-          return;
-        }
-
-        this.setState({
-          item: data.item,
-          is_playing: data.is_playing,
-          progress_ms: data.progress_ms,
-          no_data: false /* We need to "reset" the boolean, in case the
-                            user does not give F5 and has opened his Spotify. */,
-        });
-      },
-    });
-  }
-  
-  render() {
-    return (
-      <React.Fragment>
-        {!this.state.token && (
+  const { isValidSession, location } = props;
+  const { state } = location;
+  const sessionExpired = state && state.session_expired;
+  return (
+    <React.Fragment>
+      {isValidSession() ? (
+        <Redirect to="/dashboard" />
+      ) : (
+        sessionExpired && (
           <div className="login">
             <div className="login__container">
-              <a
-                className="login__container--btn"
-                href={`${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scopes.join(
-                  "%20"
-                )}&response_type=token&show_dialog=true`}
-              >
+              <button className="login__container--btn" onClick={handleLogin}>
                 Login to Spotify
-              </a>
+              </button>
             </div>
           </div>
-        )}
+        )
+      )}
 
-        <Nav token={this.state.token} />
+      <Nav />
 
-        <main className="main">
-          <img className="main__banner" src={Main} alt="Main Banner" />
+      <main className="main">
+        <img className="main__banner" src={Main} alt="Main Banner" />
 
-          <h3>Reproducidas recientemente</h3>
+        <h3>Reproducidas recientemente</h3>
 
-          <div className="main__cards">
-            <div className="main__cards--card weekend">
-              <img src={Weekend} alt="The Weekend" />
-              <p>The Weekend</p>
-            </div>
-
-            <div className="main__cards--card eminem">
-              <img src={Eminem} alt="The Weekend" />
-              <p>Eminem</p>
-            </div>
-
-            <div className="main__cards--card travis">
-              <img src={Travis} alt="The Weekend" />
-              <p>Travis Scott</p>
-            </div>
-
-            <div className="main__cards--card rihanna">
-              <img src={Rihana} alt="The Weekend" />
-              <p>Rihanna</p>
-            </div>
+        <div className="main__cards">
+          <div className="main__cards--card weekend">
+            <img src={Weekend} alt="The Weekend" />
+            <p>The Weekend</p>
           </div>
-        </main>
-        <PlayerMin
-          item={this.state.item}
-          is_playing={this.state.is_playing}
-          progress_ms={this.state.progress_ms}
-        />
-        {this.state.no_data && (
-          <div className="login">
-            <div className="login__container">
-              <p>
-                You need to be playing a song on Spotify, for something to
-                appear here.
-              </p>
-            </div>
-          </div>
-        )}
-      </React.Fragment>
-    );
-  }
-}
 
-export default Home;
+          <div className="main__cards--card eminem">
+            <img src={Eminem} alt="The Weekend" />
+            <p>Eminem</p>
+          </div>
+
+          <div className="main__cards--card travis">
+            <img src={Travis} alt="The Weekend" />
+            <p>Travis Scott</p>
+          </div>
+
+          <div className="main__cards--card rihanna">
+            <img src={Rihana} alt="The Weekend" />
+            <p>Rihanna</p>
+          </div>
+        </div>
+      </main>
+
+      <PlayerMin />
+    </React.Fragment>
+  );
+};
+
+export default connect()(Home);

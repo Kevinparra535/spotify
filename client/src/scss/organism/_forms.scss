@@ -1,0 +1,54 @@
+@import "../Tokens/colors";
+@import "../Tokens/spacings";
+@import "../Tokens/typos";
+
+.forms {
+  padding: $space_x3 $space;
+  p {
+    text-align: center;
+  }
+  button {
+    margin: $space;
+    color: $color-claro;
+    background-color: $color-primario;
+    @include botones;
+  }
+  input {
+    padding: $space $space_x3;
+    margin: 0 auto;
+    width: 100%;
+    border: 1px solid $color-oscuro;
+    border-radius: $space_half;
+  }
+  &__msg {
+    font-weight: $bolder;
+  }
+  @include media(desktop-s) {
+    padding: $space_x3;
+    p {
+      text-align: center;
+    }
+    button {
+      margin-left: $space_half;
+      color: $color-claro;
+      background-color: $color-primario;
+      @include botones;
+    }
+    input {
+      padding: $space $space_x3;
+      margin: 0 auto;
+      width: 80%;
+      border: 1px solid $color-oscuro;
+      border-radius: $space_half;
+    }
+    &__msg {
+      font-weight: $bolder;
+    }
+  }
+}
+
+.error {
+  padding: $space_x3;
+  color: $color-negative;
+  background-color: get-opacity($color-negative, 0.1);
+}

@@ -1,0 +1,40 @@
+import React from "react";
+
+import _ from "lodash";
+import music from "../images/icons/player__default.png";
+
+const ArtistsList = ({ artists }) => {
+  return (
+    <React.Fragment>
+      {Object.keys(artists).length > 0 && (
+        <div className="artists">
+          {artists.items.map((artist, index) => {
+            return (
+              <React.Fragment key={index}>
+                <div className="cards">
+                  <a
+                    target="_blank"
+                    href={artist.external_urls.spotify}
+                    rel="noopener noreferrer"
+                    className="card-image-link"
+                  >
+                    {!_.isEmpty(artist.images) ? (
+                      <img variant="top" src={artist.images[0].url} alt="" />
+                    ) : (
+                      <img src={music} alt="" />
+                    )}
+                  </a>
+                  <div>
+                    <div>{artist.name}</div>
+                  </div>
+                </div>
+              </React.Fragment>
+            );
+          })}
+        </div>
+      )}
+    </React.Fragment>
+  );
+};
+
+export default ArtistsList;

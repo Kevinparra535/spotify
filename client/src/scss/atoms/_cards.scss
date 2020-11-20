@@ -2,6 +2,31 @@
 @import "../Tokens/spacings";
 @import "../Tokens/typos";
 
+.albums,
+.artists,
+.playlist {
+  padding: $space;
+  grid-gap: $space;
+  @include display-grid;
+  @include grid-template-columns(auto);
+  @include media(tablet) {
+    padding: $space_x3;
+    grid-gap: $space;
+    @include display-grid;
+    @include grid-template-columns(auto auto auto);
+  }
+  @include media(desktop-s) {
+    padding: $space_x3;
+    grid-gap: $space;
+    @include display-grid;
+    @include grid-template-columns(auto auto auto auto);
+  }
+}
+
+.cards {
+  @include cards;
+}
+
 .main__cards--card {
   @include cards;
 }

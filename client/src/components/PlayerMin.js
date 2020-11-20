@@ -19,19 +19,13 @@ const PlayerMin = (props) => {
       <div className="background__player"></div>
 
       <div className="player">
-        <img
-          className="cover"
-          src={props.item.album.images[0].url || ImgDefault}
-          alt="Cover Album"
-        />
+        <img className="cover" src={ImgDefault} alt="Cover Album" />
 
         <div className="player__details">
           <a href="#">
-            <b className="song__name">{props.item.name || "Song Name"}</b>
+            <b className="song__name">Song Name</b>
           </a>
-          <p className="artists__name">
-            {props.item.artists[0].name || "Artist"}
-          </p>
+          <p className="artists__name">Artist</p>
         </div>
 
         <div className="player__controls">
@@ -39,11 +33,7 @@ const PlayerMin = (props) => {
             <img src={IconPrev} alt="Icon Atras" />
           </button>
           <button>
-            <img
-              className="play"
-              src={props.is_playing ? IconPlay : "Paused" }
-              alt="Icon Play"
-            />
+            <img className="play" src={IconPlay} alt="Icon Play" />
           </button>
           <button className="next">
             <img src={IconNext} alt="Icon siguiente" />

@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 
 import Logo from "../images/icons/icon__spotify.svg";
 import Menu from "../images/icons/nav__menu.png";
-import Lupa from "../images/icons/loupe.svg";
 
 class Nav extends React.Component {
   render() {
@@ -18,9 +17,6 @@ class Nav extends React.Component {
               </h1>
             </Link>
             <div className="header__links">
-              <Link to="/search">
-                <img src={Lupa} alt="" />
-              </Link>
               <a href="#" className="options">
                 <img src={Menu} alt="" />
               </a>

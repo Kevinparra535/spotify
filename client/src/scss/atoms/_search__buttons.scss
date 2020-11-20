@@ -1,0 +1,62 @@
+@import "../Tokens/colors";
+@import "../Tokens/spacings";
+@import "../Tokens/typos";
+
+.search__buttons {
+  padding-bottom: $space_x2;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  button {
+    padding: $space;
+    width: 100%;
+    border-radius: $space_half;
+    &:hover {
+      background-color: get-opacity($color-oscuro, 0.3);
+    }
+  }
+  & .btn:focus {
+    box-shadow: none;
+  }
+  @include media(tablet) {
+    padding-bottom: $space_x3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    button {
+      width: 150px;
+      border-radius: $space_half;
+      &:hover {
+        background-color: get-opacity($color-oscuro, 0.3);
+      }
+    }
+    & .btn:focus {
+      box-shadow: none;
+    }
+  }
+  @include media(desktop-s) {
+    padding-bottom: $space_x3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    button {
+      width: 150px;
+      border-radius: $space_half;
+      &:hover {
+        background-color: get-opacity($color-oscuro, 0.3);
+      }
+    }
+    & .btn:focus {
+      box-shadow: none;
+    }
+  }
+}
+
+.active {
+  color: $color-claro;
+  background-color: $color-oscuro;
+  &:hover {
+    background-color: get-opacity($color-oscuro, 1);
+  }
+}

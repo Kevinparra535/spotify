@@ -1,8 +1,8 @@
-import { SET_ALBUMS, ADD_ALBUMS } from "../utils/Constantes";
+import { SET_ALBUMS, ADD_ALBUMS } from '../utils/Constantes';
+
 
 const albumsReducer = (state = {}, action) => {
   const { albums } = action;
-
   switch (action.type) {
     case SET_ALBUMS:
       return albums;
@@ -10,10 +10,11 @@ const albumsReducer = (state = {}, action) => {
       return {
         ...state,
         next: albums.next,
-        items: [...state.items, ...albums.items],
+        items: [...state.items, ...albums.items]
       };
     default:
       return state;
   }
 };
+
 export default albumsReducer;
