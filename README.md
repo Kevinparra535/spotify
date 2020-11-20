@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Prueba Tecnica - Cunsumo de la API Spotify 👻
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -6,7 +6,13 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
-### `yarn start`
+### `Primeros pasos` 😅
+
+Una vez haya clonado o descargado el proyecto en la linea de comandos ubiquese dentro de la carpeta cliente, una vez alli escriba `npm install, esto descargara` todas las
+dependencias necesarias para que el proyecto funcione.
+
+
+### `npm run start` o  `yarn start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -19,7 +25,7 @@ You will also see any lint errors in the console.
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
+### `npm run build` o `yarn build`
 
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
