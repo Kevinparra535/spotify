@@ -18,8 +18,37 @@ Una vez alla terminado de instalar escriba `npm run start` o  `yarn start`
 Si por algun motivo no funciona con los datos que estan ahí, entre a este [sitio](https://developer.spotify.com/dashboard/applications/)
 Y registre una nueva aplicacion si no sabe como siga esta guia 
 
-Cree una aplicacion
-![Cree una aplicacion](https://prnt.sc/vn4pdo)
+## Registre su aplicación:
+En el panel, haga clic en CREATE A CLIENT ID.
+
+Escriba Nombre de aplicación y Descripción de la aplicación y, a continuación, haga clic en CREAR. La aplicación está registrada y se abre la vista de la aplicación.
+En la vista de la aplicación, haz clic en Editar configuración para ver y actualizar la configuración de la aplicación.
+
+Edit Settings View
+
+Nota: Encuentre su ID de cliente y secreto de cliente; los necesita en la fase de autenticación.
+
+El identificador de cliente es el identificador único de la aplicación.
+Client Secret es la clave que pasa en llamadas seguras a las cuentas de Spotify y a los servicios de API web. Almacene siempre la clave secreta de cliente de forma segura; nunca revelarlo públicamente! Si sospecha que la clave secreta se ha visto comprometida, vuelva a generarla inmediatamente haciendo clic en el vínculo de la vista de configuración de edición.
+Lista blanca de un URI de redirección
+En Uri de redirección, escriba una o varias direcciones que desee incluir en la lista blanca con Spotify. Este URI permite que el servicio de autenticación de Spotify vuelva a iniciar automáticamente la aplicación cada vez que el usuario inicia sesión.
+
+Para introducir URI para una aplicación en iOS:
+
+Verifique que:
+
+Todos los caracteres están en minúsculas.
+El prefijo debe ser único para la aplicación. No puede ser un prefijo general como http.
+El prefijo solo debe ser utilizado por la aplicación para autenticar Spotify. Si ya tiene un esquema de dirección URL controlado por la aplicación para otros usos, no lo reutilice.
+Se recomienda incluir el nombre de la aplicación en el URI.
+Incluya una ruta después del primer par de barras diagonales. Por ejemplo: el nombre de la aplicación es Mi aplicación impresionante El URI de redirección puede ser o .my-awesome-app-login://callbackawesomeprotocol123://returnafterlogin
+Nota: No utilice https, http o cualquier otro protocolo común como prefijo, ya que encontrará que la devolución de llamada abre su navegador web cliente o algún otro programa. Escriba un prefijo de protocolo único para que la aplicación tenga la oportunidad de escucharlo.
+
+Haga clic en AGREGAR.
+Plataforma de reproducción
+Para reproducir música desde Spotify en tu navegador (a través del SDK de reproducción web),no necesitas realizar ningún paso adicional en la configuración de la aplicación. Para reproducir música de Spotify en iOS (a través del SDK de iOS),escriba BUNDLE IDs. Para reproducir música desde Spotify en Android (iva el SDK de Android),introduzca uno o más nombres de paquetes de Android y su huella digital SHA1.
+
+GUARDAR los cambios; la configuración de la aplicación está disponible para su revisión en el panel.
 
 ## Como funciona la API de Spotify
 
