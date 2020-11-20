@@ -8,8 +8,15 @@ In the project directory, you can run:
 
 ### `Primeros pasos` 😅
 
-Una vez haya clonado o descargado el proyecto en la linea de comandos ubiquese dentro de la carpeta cliente, una vez alli escriba npm install, esto descargara todas las
+Una vez haya clonado o descargado el proyecto en la linea de comandos ubiquese dentro de la carpeta client, una vez alli escriba npm install, esto descargara todas las
 dependencias necesarias para que el proyecto funcione.
+
+Una vez alla terminado de instalar escriba `npm run start` o  `yarn start`
+
+## Agrege los datos
+
+![](https://prnt.sc/vn4mju)
+
 
 
 ### `npm run start` o  `yarn start`
