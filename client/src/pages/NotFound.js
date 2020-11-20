@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function NotFound() {
   return (
@@ -10,6 +11,7 @@ function NotFound() {
         autoplay
         classname="w-full"
       ></lottie-player>
+      <Link to="/dashboard">Volver al inicio</Link>
     </React.Fragment>
   );
 }
