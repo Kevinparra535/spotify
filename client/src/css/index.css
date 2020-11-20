@@ -1205,3 +1205,9 @@ lottie-player {
 .hide {
   display: none;
 }
+
+.load-more button {
+  padding: 10px 30px;
+  color: #f8f8f8;
+  background-color: #263238;
+}

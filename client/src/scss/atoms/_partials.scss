@@ -19,5 +19,12 @@
   display: none;
 }
 
+.load-more {
+  button{
+    padding: $space $space_x3;
+    color: $color-claro;
+    background-color: $color-oscuro;
+  }
+}
 
 
