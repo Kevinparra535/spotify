@@ -1,5 +1,7 @@
 # Prueba Tecnica - Consumo de la API Spotify 👻
-https://spotify-react-kpl.web.app/
+
+[Demo](https://spotify-react-kpl.web.app/).
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
